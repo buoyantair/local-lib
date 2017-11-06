@@ -16,7 +16,7 @@ const wiki = require('./routes/wiki');
 const catalog = require('./routes/catalog');
 
 const mongoose = require('mongoose');
-const mongoDB = `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@ds042677.mlab.com:42677/locallibrary`;
+const mongoDB = process.env.MONGODB_URI || `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@ds042677.mlab.com:42677/locallibrary`;
 
 mongoose.connect(mongoDB, {
   useMongoClient: true
